@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:5000/api';
+const BASE_URL = 'https://kitty-vibes-ke.onrender.com';
 export const fetchAllProducts = async () => {
     const response = await fetch(`${BASE_URL}/products`);
     if (!response.ok) throw new Error('Failed to fetch products');
