@@ -125,7 +125,7 @@ const CartSidebar = () => {
                                     <div key={item.id} className="flex gap-4 bg-pink-50/80 border-2 border-pink-100 hover:border-pink-300 rounded-xl p-4 transition-all">
                                         <div className="relative">
                                             <img
-                                                src={item.img_url}
+                                                src={item.img_url || item.image_url || ''}
                                                 alt={item.product_name}
                                                 className="size-20 object-cover rounded-lg"
                                             />
@@ -136,7 +136,7 @@ const CartSidebar = () => {
 
                                         <div className="flex-1">
                                             <h4 className="font-bold text-gray-800 text-sm">{item.product_name}</h4>
-                                            <p className="text-pink-600 font-bold mt-1">KES {item.price.toLocaleString()}</p>
+                                            <p className="text-black font-bold mt-1">KES {item.price.toLocaleString()}</p>
 
                                             <div className="flex items-center gap-2 mt-3">
                                                 <button
@@ -179,15 +179,15 @@ const CartSidebar = () => {
                         <div className="border-t-2 border-pink-100 p-6 bg-pink-50/50">
                             <div className="flex justify-between mb-2">
                                 <span className="text-gray-600">Subtotal</span>
-                                <span className="text-gray-600">KES {total.toLocaleString()}</span>
+                                <span className="text-black font-bold">KES {total.toLocaleString()}</span>
                             </div>
                             <div className="flex justify-between mb-6">
                                 <span className="text-gray-600">Shipping</span>
-                                <span className="text-pink-600 font-medium">Calculated at checkout</span>
+                                <span className="text-black font-medium">Calculated at checkout</span>
                             </div>
                             <div className="flex justify-between mb-6 pt-4 border-t border-pink-200">
                                 <span className="text-gray-800 font-bold text-lg">Total</span>
-                                <span className="text-2xl font-black text-pink-600">KES {total.toLocaleString()}</span>
+                                <span className="text-2xl font-black text-black">KES {total.toLocaleString()}</span>
                             </div>
                             <button
                                 onClick={() => setCheckout(true)}
