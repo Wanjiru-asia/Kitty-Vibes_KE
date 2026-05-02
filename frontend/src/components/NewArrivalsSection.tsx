@@ -48,14 +48,12 @@ const NewArrivalsSection = () => {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                    {newArrivals
-                        .filter(Boolean)
-                        .map((product) => (
-                            <div key={product.id} className="relative">
-                                <span className="absolute top-4 left-4 z-20 bg-pink-600 text-white text-xs px-3 py-1.5 rounded-full font-black tracking-wider uppercase animate-pulse">NEW</span>
-                                <ProductCard product={product} />
-                            </div>
-                        ))}
+                    {newArrivals.map((product) => (
+                        <div key={product.id} className="relative">
+                            <span className="absolute top-4 left-4 z-20 bg-pink-600 text-white text-xs px-3 py-1.5 rounded-full font-black tracking-wider uppercase animate-pulse">NEW</span>
+                            <ProductCard product={product} />
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
